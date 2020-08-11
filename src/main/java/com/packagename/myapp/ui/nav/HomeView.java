@@ -7,6 +7,9 @@ import com.vaadin.flow.component.checkbox.Checkbox;
 import com.vaadin.flow.component.dependency.CssImport;
 import com.vaadin.flow.component.formlayout.FormLayout;
 import com.vaadin.flow.component.html.*;
+import com.vaadin.flow.component.icon.Icon;
+import com.vaadin.flow.component.icon.VaadinIcon;
+import com.vaadin.flow.component.notification.Notification;
 import com.vaadin.flow.component.orderedlayout.FlexComponent;
 import com.vaadin.flow.component.orderedlayout.FlexLayout;
 import com.vaadin.flow.component.orderedlayout.HorizontalLayout;
@@ -138,11 +141,23 @@ public class HomeView extends VerticalLayout {
         image.setWidth("160px");
         image.setHeight("140px");
 
+        //like button heart add to custom card
+        Icon logoV = new Icon(VaadinIcon.HEART_O);
+        logoV.getStyle().set("cursor", "pointer");
+        logoV.addClickListener(
+                event -> like("You Like"));
+        logoV.setSize("heart");
+        logoV.addClassName("heartlike");
+
+        HorizontalLayout title=new HorizontalLayout(card1Label,logoV);
+        title.setDefaultVerticalComponentAlignment(Alignment.END);
+        title.setWidth("180px");
+
         //card layout
         VerticalLayout verrticalcard=new VerticalLayout();
         verrticalcard.setAlignItems(Alignment.CENTER);
         verrticalcard.setJustifyContentMode(JustifyContentMode.CENTER);
-        verrticalcard.add(image,card1Label,details);
+        verrticalcard.add(image,title,details);
 
         FlexLayout card = new FlexLayout(verrticalcard);
         card.addClassName("card");
@@ -151,5 +166,9 @@ public class HomeView extends VerticalLayout {
         card.setWidth("200px");
         card.setHeight("280px");
         return card;
+    }
+
+    public void like(String text){
+        Notification.show(text);
     }
 }

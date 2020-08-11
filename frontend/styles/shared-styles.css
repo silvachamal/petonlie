@@ -41,6 +41,19 @@ margin: 0 auto;
 		box-shadow: 2px 1px 5px 0px grey;
 	}
 
+.heart{
+ position: absolute;
+ color:DodgerBlue;
+   right: 10px;
+   padding: 5px;
+ }
+
+ .heartlike{
+ color:DodgerBlue;
+   right: 10px;
+   padding: 5px;
+ }
+
 .image{
 padding: 5px, 5px, 5px, 5px;
 }
