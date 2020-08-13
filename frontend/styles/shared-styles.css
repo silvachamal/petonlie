@@ -48,6 +48,13 @@ margin: 0 auto;
    padding: 5px;
  }
 
+ .reg{
+  position: absolute;
+  color:DodgerBlue;
+    right: 50px;
+    padding: 5px;
+  }
+
  .heartlike{
  color:DodgerBlue;
    right: 10px;

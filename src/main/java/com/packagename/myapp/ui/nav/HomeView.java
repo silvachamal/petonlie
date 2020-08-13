@@ -135,11 +135,20 @@ public class HomeView extends VerticalLayout {
         //card details
         Span details = new Span("dogs are near to you selected area");
         details.setWidth("180px");
+        details.getStyle().set("cursor", "pointer");
+        details.addClickListener(e->
+                details.getUI().ifPresent(ui ->
+                        ui.navigate("detail")));
 
         Image image = new Image("icons/img.jpg", "DummyImage");
         image.addClassName("image");
         image.setWidth("160px");
         image.setHeight("140px");
+        image.getStyle().set("cursor", "pointer");
+        image.addClickListener(e ->
+                image.getUI().ifPresent(ui ->
+                        ui.navigate("detail"))
+        );
 
         //like button heart add to custom card
         Icon logoV = new Icon(VaadinIcon.HEART_O);
@@ -165,10 +174,12 @@ public class HomeView extends VerticalLayout {
         card.setJustifyContentMode(JustifyContentMode.CENTER);
         card.setWidth("200px");
         card.setHeight("280px");
+
         return card;
     }
 
     public void like(String text){
+
         Notification.show(text);
     }
 }
