@@ -27,9 +27,7 @@ import com.vaadin.flow.router.Route;
 @CssImport("./styles/shared-styles.css")
 
 public class HomeView extends VerticalLayout {
-    //H1 h1=new H1("Home");
 
-    //define the main layout
     VerticalLayout vl=new VerticalLayout();
 
     public HomeView(){

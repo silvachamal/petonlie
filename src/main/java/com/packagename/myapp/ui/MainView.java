@@ -25,11 +25,13 @@ public class MainView extends AppLayout {
     public MainView() {
 
         //nav bar side icon
-        H1 logo = new H1("Pet");
-        logo.addClassName("logo");
+        //H1 logo = new H1("Pet");
+        //logo.addClassName("logo");
+
+        Icon ico=new Icon(VaadinIcon.CLIPBOARD_USER);
 
         //nav bar item layout
-        HorizontalLayout header = new HorizontalLayout( logo);
+        HorizontalLayout header = new HorizontalLayout( ico);
         header.setDefaultVerticalComponentAlignment(
                 FlexComponent.Alignment.CENTER);
         header.setWidth("100%");
